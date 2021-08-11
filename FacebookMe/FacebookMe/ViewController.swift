@@ -13,9 +13,19 @@ class ViewController: UIViewController {
     let cellTitle: [String] = ["pencil.circle","doc.circle","bolt.circle"]
      
     let data = [
+        ["최유성\n iOS 개발자 입니다."],
         ["Friends","Events","Groups","SSU","Town Hall","Instant Games","See More..."],
         ["Youtube","LOL","Starcraft","Hip-Hop","Add Favorites..."],
-        ["Settings","Privacy Shortcuts","Help and Support"]
+        ["Settings","Privacy Shortcuts","Help and Support"],
+        ["Log out"]
+    ]
+    
+    let img = [
+        ["person.2.fill"],
+        ["person.2.fill","calendar","person.3.fill","graduationcap","house.fill","gamecontroller.fill",""],
+        ["","","","",""],
+        ["gearshape.fill","shield.lefthalf.fill","questionmark"],
+        [""]
     ]
     
     override func viewDidLoad() {
@@ -52,6 +62,11 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
         
         cell.custom_Label.text = data[indexPath.section][indexPath.row]
+        cell.custom_Img.image = UIImage(systemName: img[indexPath.section][indexPath.row])
+        
+        if cell.custom_Label.text == "Log out" {
+            cell.custom_Label.textColor = .systemRed
+        }
         
         return cell
     }
