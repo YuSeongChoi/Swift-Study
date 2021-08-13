@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Facebook"
+        self.navigationController?.navigationBar.barTintColor = .blue
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
@@ -64,17 +66,36 @@ extension ViewController: UITableViewDataSource {
         cell.custom_Label.text = data[indexPath.section][indexPath.row]
         cell.custom_Img.image = UIImage(systemName: img[indexPath.section][indexPath.row])
         
-        if cell.custom_Label.text == "Log out" {
+        
+        if indexPath.row+1 == data[indexPath.section].count && indexPath.section > 0 && indexPath.section < 4 {
+            cell.custom_Label.textColor = .systemBlue
+            cell.custom_Button.isHidden = true
+        } else if indexPath.section == 4 {
             cell.custom_Label.textColor = .systemRed
+            cell.custom_Button.isHidden = true
+            cell.custom_Label.textAlignment = .center
         }
+        else {
+            cell.custom_Label.textColor = .black
+            cell.custom_Label.textAlignment = .left
+        }
+
+        
+//        print("section : \(indexPath.section) , row : \(indexPath.row)")
         
         return cell
+    }
+    
+    func checkColor() {
+        
     }
     
     
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("section : \(indexPath.section), indexPath : \(indexPath.row), data section : \(data[indexPath.section].count)")
+    }
 }
 
