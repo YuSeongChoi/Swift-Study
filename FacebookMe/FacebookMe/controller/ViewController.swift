@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let cellTitle: [String] = ["pencil.circle","doc.circle","bolt.circle"]
      
     let data = [
-        ["최유성\n iOS 개발자 입니다."],
+        ["최유성\niOS 개발자 입니다."],
         ["Friends","Events","Groups","SSU","Town Hall","Instant Games","See More..."],
         ["Youtube","LOL","Starcraft","Hip-Hop","Add Favorites..."],
         ["Settings","Privacy Shortcuts","Help and Support"],
@@ -61,36 +61,35 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
-        
-        cell.custom_Label.text = data[indexPath.section][indexPath.row]
-        cell.custom_Img.image = UIImage(systemName: img[indexPath.section][indexPath.row])
-        
-        
-        if indexPath.row+1 == data[indexPath.section].count && indexPath.section > 0 && indexPath.section < 4 {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BigCustomTableViewCell
+            cell.custom_Label.text = data[indexPath.section][indexPath.row]
+            cell.custom_Img.image = UIImage(systemName: "person.fill")
+            cell.accessoryType = .none
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+            cell.custom_Label.text = data[indexPath.section][indexPath.row]
+            cell.custom_Img.image = UIImage(systemName: img[indexPath.section][indexPath.row])
+            
+            checkColor(cell: cell)
+            
+            return cell
+        }
+    }
+    
+    func checkColor(cell: CustomCell) {
+        if cell.custom_Label.text == "See More..." || cell.custom_Label.text == "Add Favorites..." {
+            cell.accessoryType = .none
             cell.custom_Label.textColor = .systemBlue
-            cell.custom_Button.isHidden = true
-        } else if indexPath.section == 4 {
+        }
+        
+        if cell.custom_Label.text == "Log out" {
+            cell.accessoryType = .none
             cell.custom_Label.textColor = .systemRed
-            cell.custom_Button.isHidden = true
-            cell.custom_Label.textAlignment = .center
         }
-        else {
-            cell.custom_Label.textColor = .black
-            cell.custom_Label.textAlignment = .left
-        }
-
-        
-//        print("section : \(indexPath.section) , row : \(indexPath.row)")
-        
-        return cell
     }
-    
-    func checkColor() {
-        
-    }
-    
-    
 }
 
 extension ViewController: UITableViewDelegate {

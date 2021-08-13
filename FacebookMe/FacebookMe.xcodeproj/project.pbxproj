@@ -14,6 +14,7 @@
 		04C9400026C3EBA30081C7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C93FFF26C3EBA30081C7CF /* Assets.xcassets */; };
 		04C9400326C3EBA30081C7CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C9400126C3EBA30081C7CF /* LaunchScreen.storyboard */; };
 		04C9400C26C3EEAE0081C7CF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9400B26C3EEAE0081C7CF /* CustomCell.swift */; };
+		04C9401326C68F7D0081C7CF /* BigCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9401226C68F7D0081C7CF /* BigCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		04C9400226C3EBA30081C7CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C9400426C3EBA30081C7CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C9400B26C3EEAE0081C7CF /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		04C9401226C68F7D0081C7CF /* BigCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,41 @@
 		04C93FF526C3EBA10081C7CF /* FacebookMe */ = {
 			isa = PBXGroup;
 			children = (
+				04C9401126C68F600081C7CF /* model */,
+				04C9401026C68F5B0081C7CF /* controller */,
+				04C9400F26C68F560081C7CF /* view */,
 				04C93FF626C3EBA10081C7CF /* AppDelegate.swift */,
 				04C93FF826C3EBA10081C7CF /* SceneDelegate.swift */,
-				04C93FFA26C3EBA10081C7CF /* ViewController.swift */,
 				04C93FFC26C3EBA10081C7CF /* Main.storyboard */,
 				04C93FFF26C3EBA30081C7CF /* Assets.xcassets */,
 				04C9400126C3EBA30081C7CF /* LaunchScreen.storyboard */,
 				04C9400426C3EBA30081C7CF /* Info.plist */,
-				04C9400B26C3EEAE0081C7CF /* CustomCell.swift */,
 			);
 			path = FacebookMe;
+			sourceTree = "<group>";
+		};
+		04C9400F26C68F560081C7CF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04C9400B26C3EEAE0081C7CF /* CustomCell.swift */,
+				04C9401226C68F7D0081C7CF /* BigCustomTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		04C9401026C68F5B0081C7CF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C93FFA26C3EBA10081C7CF /* ViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		04C9401126C68F600081C7CF /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +169,7 @@
 			files = (
 				04C93FFB26C3EBA10081C7CF /* ViewController.swift in Sources */,
 				04C93FF726C3EBA10081C7CF /* AppDelegate.swift in Sources */,
+				04C9401326C68F7D0081C7CF /* BigCustomTableViewCell.swift in Sources */,
 				04C9400C26C3EEAE0081C7CF /* CustomCell.swift in Sources */,
 				04C93FF926C3EBA10081C7CF /* SceneDelegate.swift in Sources */,
 			);
