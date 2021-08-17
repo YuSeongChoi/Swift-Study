@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let cellName: String = "customCell"
+    let smallCellName: String = "small"
+    let bigCellName: String = "big"
     let cellTitle: [String] = ["pencil.circle","doc.circle","bolt.circle"]
      
     let data = [
@@ -62,14 +63,14 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BigCustomTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: bigCellName, for: indexPath) as! BigCustomTableViewCell
             cell.custom_Label.text = data[indexPath.section][indexPath.row]
             cell.custom_Img.image = UIImage(systemName: "person.fill")
             cell.accessoryType = .none
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: smallCellName, for: indexPath) as! SmalCustomTableViewCell
             cell.custom_Label.text = data[indexPath.section][indexPath.row]
             cell.custom_Img.image = UIImage(systemName: img[indexPath.section][indexPath.row])
             
@@ -79,15 +80,20 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
-    func checkColor(cell: CustomCell) {
+    func checkColor(cell: SmalCustomTableViewCell) {
         if cell.custom_Label.text == "See More..." || cell.custom_Label.text == "Add Favorites..." {
             cell.accessoryType = .none
             cell.custom_Label.textColor = .systemBlue
         }
         
-        if cell.custom_Label.text == "Log out" {
+        else if cell.custom_Label.text == "Log out" {
             cell.accessoryType = .none
             cell.custom_Label.textColor = .systemRed
+        }
+        
+        else {
+            cell.accessoryType = .disclosureIndicator
+            cell.custom_Label.textColor = .black
         }
     }
 }
