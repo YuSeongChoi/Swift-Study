@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let smallCellName: String = "small"
-    let bigCellName: String = "big"
-    let cellTitle: [String] = ["pencil.circle","doc.circle","bolt.circle"]
+    private let smallCellName: String = "small"
+    private let bigCellName: String = "big"
+    private let cellTitle: [String] = ["pencil.circle","doc.circle","bolt.circle"]
      
     let data = [
         ["최유성\niOS 개발자 입니다."],
@@ -61,9 +61,11 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
+    // 셀 보여주는 부분
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: bigCellName, for: indexPath) as! BigCustomTableViewCell
+//            cell.configuration()
             cell.custom_Label.text = data[indexPath.section][indexPath.row]
             cell.custom_Img.image = UIImage(systemName: "person.fill")
             cell.accessoryType = .none
@@ -80,6 +82,7 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
+    // 색깔 표시해주는 부분
     func checkColor(cell: SmalCustomTableViewCell) {
         if cell.custom_Label.text == "See More..." || cell.custom_Label.text == "Add Favorites..." {
             cell.accessoryType = .none
