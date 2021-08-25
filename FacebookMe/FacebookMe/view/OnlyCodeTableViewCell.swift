@@ -9,23 +9,28 @@ import UIKit
 
 class OnlyCodeTableViewCell: UITableViewCell {
     // 이미지 뷰 생성
-    private let myImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person.fill")
-        return imageView
-    }()
+    let myImageView = UIImageView()
     
     // 라벨 생성
-    private let myLabel: UILabel = {
-        let label = UILabel()
-        label.text = "사람"
-        return label
-    }()
+    let myLabel = UILabel()
     
-    private func setConstant() {
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addViews()
+        setConstant()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func addViews() {
         contentView.addSubview(myImageView)
         contentView.addSubview(myLabel)
-        
+    }
+    
+    private func setConstant() {
         myImageView.translatesAutoresizingMaskIntoConstraints = false
         myLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -40,14 +45,5 @@ class OnlyCodeTableViewCell: UITableViewCell {
             myLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16),
             myLabel.centerYAnchor.constraint(equalTo: myImageView.centerYAnchor)
         ])
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setConstant()
-    } 
-    
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

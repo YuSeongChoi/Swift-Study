@@ -12,7 +12,17 @@ class OnlyCodeViewController: UIViewController {
     let myInfo: [Information] = MyInfo().shared
     let myFavorites: [Information] = MyFavorite().shared
     let myOptions: [Information] = MyOption().shared
-    lazy var sectionCount : [Int] = [1, myInfo.count, myFavorites.count, myOptions.count, 1]
+    let myLogout: [Information] = MyLogout().shared
+    
+    lazy var sectionCount : [Int] = [1, myInfo.count, myFavorites.count, myOptions.count, myLogout.count]
+    lazy var facebookData: [[Information]] = [
+        [Information(label: "", image: "")],
+        myInfo,
+        myFavorites,
+        myOptions,
+        myLogout
+    ]
+    
     let myTableView: UITableView = UITableView()
 
     override func viewDidLoad() {
@@ -76,7 +86,9 @@ extension OnlyCodeViewController: UITableViewDataSource {
             return cell
         } else {
             guard let cell =  tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as? OnlyCodeTableViewCell else { return UITableViewCell() }
-            print("here")
+            cell.myLabel.text = facebookData[indexPath.section][indexPath.row].label
+            cell.myImageView.image = UIImage(systemName: facebookData[indexPath.section][indexPath.row].image)
+            cell.accessoryType = .none
             return cell
         }
         

@@ -29,6 +29,15 @@ class CodeProfileTableViewCell: UITableViewCell {
         return label
     }()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setConstant()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setConstant() {
         contentView.addSubview(myImageView)
         contentView.addSubview(upLabel)
@@ -54,14 +63,4 @@ class CodeProfileTableViewCell: UITableViewCell {
             downLabel.centerYAnchor.constraint(equalTo: myImageView.centerYAnchor, constant: 10)
         ])
     }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setConstant()
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
 }
