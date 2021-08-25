@@ -11,7 +11,8 @@ class CodeProfileTableViewCell: UITableViewCell {
     // 이미지 뷰 생성
     private let myImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person.fill")
+        imageView.image = UIImage(named: "zzanggu")
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -48,7 +49,7 @@ class CodeProfileTableViewCell: UITableViewCell {
         downLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             myImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             myImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             myImageView.widthAnchor.constraint(equalToConstant: 64),

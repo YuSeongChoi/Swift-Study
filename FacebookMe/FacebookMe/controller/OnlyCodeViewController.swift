@@ -89,9 +89,27 @@ extension OnlyCodeViewController: UITableViewDataSource {
             cell.myLabel.text = facebookData[indexPath.section][indexPath.row].label
             cell.myImageView.image = UIImage(systemName: facebookData[indexPath.section][indexPath.row].image)
             cell.accessoryType = .none
+            checkColor(cell: cell)
             return cell
         }
+    }
+    
+    // 색깔 표시해주는 부분
+    func checkColor(cell: OnlyCodeTableViewCell) {
+        if cell.myLabel.text == "See More..." || cell.myLabel.text == "Add Favorites..." {
+            cell.accessoryType = .none
+            cell.myLabel.textColor = .systemBlue
+        }
         
+        else if cell.myLabel.text == "Log out" {
+            cell.accessoryType = .none
+            cell.myLabel.textColor = .systemRed
+        }
+        
+        else {
+            cell.accessoryType = .disclosureIndicator
+            cell.myLabel.textColor = .black
+        }
     }
     
     
