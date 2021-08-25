@@ -12,7 +12,7 @@ struct SectionHeader {
 }
 
 struct MyInfo {
-    let myInfo: [Information] = [
+    let shared: [Information] = [
         Information(label: "Friends", image: "img"),
         Information(label: "Events", image: "img"),
         Information(label: "Groups", image: "img"),
@@ -23,14 +23,14 @@ struct MyInfo {
 }
 
 struct MyFavorite {
-    let myFavorites: [Information] = [
+    let shared: [Information] = [
         Information(label: "muck bang", image: "img"),
         Information(label: "K-pop", image: "img"),
     ]
 }
 
 struct MyOption {
-    let myOption: [Information] = [
+    let shared: [Information] = [
         Information(label: "Settings", image: "img"),
         Information(label: "Privacy Shortcuts", image: "img"),
         Information(label: "Help and Support", image: "img")
