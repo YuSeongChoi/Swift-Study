@@ -103,7 +103,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("section : \(indexPath.section), indexPath : \(indexPath.row), data section : \(data[indexPath.section].count)")
+//        print("section : \(indexPath.section), indexPath : \(indexPath.row), data section : \(data[indexPath.section].count)")
     }
 }
 

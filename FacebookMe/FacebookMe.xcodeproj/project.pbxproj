@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0495344926CBC51B00323B25 /* SmalCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495344826CBC51B00323B25 /* SmalCustomTableViewCell.swift */; };
+		0495345F26D6429900323B25 /* OnlyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495345E26D6429900323B25 /* OnlyCodeViewController.swift */; };
+		0495346226D6977000323B25 /* Profile+Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495346126D6977000323B25 /* Profile+Information.swift */; };
+		0495346726D69DCB00323B25 /* SectionHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495346626D69DCB00323B25 /* SectionHeaders.swift */; };
 		04C93FF726C3EBA10081C7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C93FF626C3EBA10081C7CF /* AppDelegate.swift */; };
 		04C93FF926C3EBA10081C7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C93FF826C3EBA10081C7CF /* SceneDelegate.swift */; };
 		04C93FFB26C3EBA10081C7CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C93FFA26C3EBA10081C7CF /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		0495344826CBC51B00323B25 /* SmalCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmalCustomTableViewCell.swift; sourceTree = "<group>"; };
+		0495345E26D6429900323B25 /* OnlyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyCodeViewController.swift; sourceTree = "<group>"; };
+		0495346126D6977000323B25 /* Profile+Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+Information.swift"; sourceTree = "<group>"; };
+		0495346626D69DCB00323B25 /* SectionHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaders.swift; sourceTree = "<group>"; };
 		04C93FF326C3EBA10081C7CF /* FacebookMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C93FF626C3EBA10081C7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C93FF826C3EBA10081C7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				04C93FFA26C3EBA10081C7CF /* ViewController.swift */,
+				0495345E26D6429900323B25 /* OnlyCodeViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -93,6 +100,8 @@
 		04C9401126C68F600081C7CF /* model */ = {
 			isa = PBXGroup;
 			children = (
+				0495346126D6977000323B25 /* Profile+Information.swift */,
+				0495346626D69DCB00323B25 /* SectionHeaders.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -167,11 +176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0495346726D69DCB00323B25 /* SectionHeaders.swift in Sources */,
 				04C93FFB26C3EBA10081C7CF /* ViewController.swift in Sources */,
+				0495346226D6977000323B25 /* Profile+Information.swift in Sources */,
 				0495344926CBC51B00323B25 /* SmalCustomTableViewCell.swift in Sources */,
 				04C93FF726C3EBA10081C7CF /* AppDelegate.swift in Sources */,
 				04C9401326C68F7D0081C7CF /* BigCustomTableViewCell.swift in Sources */,
 				04C93FF926C3EBA10081C7CF /* SceneDelegate.swift in Sources */,
+				0495345F26D6429900323B25 /* OnlyCodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
