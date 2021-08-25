@@ -116,5 +116,41 @@ extension OnlyCodeViewController: UITableViewDataSource {
 }
 
 extension OnlyCodeViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            showToast(message: "프로필 선택")
+        case 1:
+            showToast(message: "\(myInfo[indexPath.row].label) 선택")
+        case 2:
+            showToast(message: "\(myFavorites[indexPath.row].label) 선택")
+        case 3:
+            showToast(message: "\(myOptions[indexPath.row].label) 선택")
+        default:
+            showToast(message: "\(myLogout[indexPath.row].label) 선택")
+        }
+    }
+}
+
+extension OnlyCodeViewController {
+    // Toast 메시지 띄우는 함수
+    func showToast(message : String) {
+        let width_variable:CGFloat = 50
+        let toastLabel = UILabel(frame: CGRect(x: width_variable, y: self.view.frame.size.height-100, width: view.frame.size.width-2*width_variable, height: 35))
+        // 뷰가 위치할 위치를 지정해준다. 여기서는 아래로부터 100만큼 떨어져있고, 너비는 양쪽에 10만큼 여백을 가지며, 높이는 35로
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 3.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
 }
