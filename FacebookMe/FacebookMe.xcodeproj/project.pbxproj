@@ -12,6 +12,7 @@
 		0495346226D6977000323B25 /* Profile+Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495346126D6977000323B25 /* Profile+Information.swift */; };
 		0495346726D69DCB00323B25 /* SectionHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495346626D69DCB00323B25 /* SectionHeaders.swift */; };
 		0495346A26D69F9B00323B25 /* OnlyCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495346926D69F9B00323B25 /* OnlyCodeTableViewCell.swift */; };
+		0495346D26D6A57800323B25 /* CodeProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495346C26D6A57800323B25 /* CodeProfileTableViewCell.swift */; };
 		04C93FF726C3EBA10081C7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C93FF626C3EBA10081C7CF /* AppDelegate.swift */; };
 		04C93FF926C3EBA10081C7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C93FF826C3EBA10081C7CF /* SceneDelegate.swift */; };
 		04C93FFB26C3EBA10081C7CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C93FFA26C3EBA10081C7CF /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		0495346126D6977000323B25 /* Profile+Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+Information.swift"; sourceTree = "<group>"; };
 		0495346626D69DCB00323B25 /* SectionHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaders.swift; sourceTree = "<group>"; };
 		0495346926D69F9B00323B25 /* OnlyCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyCodeTableViewCell.swift; sourceTree = "<group>"; };
+		0495346C26D6A57800323B25 /* CodeProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeProfileTableViewCell.swift; sourceTree = "<group>"; };
 		04C93FF326C3EBA10081C7CF /* FacebookMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C93FF626C3EBA10081C7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C93FF826C3EBA10081C7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				04C9401226C68F7D0081C7CF /* BigCustomTableViewCell.swift */,
 				0495344826CBC51B00323B25 /* SmalCustomTableViewCell.swift */,
 				0495346926D69F9B00323B25 /* OnlyCodeTableViewCell.swift */,
+				0495346C26D6A57800323B25 /* CodeProfileTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				0495346726D69DCB00323B25 /* SectionHeaders.swift in Sources */,
 				04C93FFB26C3EBA10081C7CF /* ViewController.swift in Sources */,
+				0495346D26D6A57800323B25 /* CodeProfileTableViewCell.swift in Sources */,
 				0495346226D6977000323B25 /* Profile+Information.swift in Sources */,
 				0495346A26D69F9B00323B25 /* OnlyCodeTableViewCell.swift in Sources */,
 				0495344926CBC51B00323B25 /* SmalCustomTableViewCell.swift in Sources */,

@@ -8,13 +8,14 @@
 import UIKit
 
 class OnlyCodeTableViewCell: UITableViewCell {
-    // Create ImageView
+    // 이미지 뷰 생성
     private let myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.fill")
         return imageView
     }()
     
+    // 라벨 생성
     private let myLabel: UILabel = {
         let label = UILabel()
         label.text = "사람"
@@ -32,8 +33,8 @@ class OnlyCodeTableViewCell: UITableViewCell {
             myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             myImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             myImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            myImageView.widthAnchor.constraint(equalToConstant: 64),
-            myImageView.heightAnchor.constraint(equalToConstant: 64),
+            myImageView.widthAnchor.constraint(equalToConstant: 32),
+            myImageView.heightAnchor.constraint(equalToConstant: 32),
             
             myLabel.leadingAnchor.constraint(equalTo: myImageView.trailingAnchor, constant: 15),
             myLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16),
@@ -49,13 +50,4 @@ class OnlyCodeTableViewCell: UITableViewCell {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
-
 }

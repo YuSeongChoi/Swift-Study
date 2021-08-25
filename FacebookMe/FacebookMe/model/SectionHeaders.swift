@@ -8,7 +8,7 @@
 import Foundation
 
 struct SectionHeader {
-    let sectionHeader : [String] = [" "," ","FAVORITES"," "," "]
+    let shared : [String] = [" "," ","FAVORITES"," "," "]
 }
 
 struct MyInfo {

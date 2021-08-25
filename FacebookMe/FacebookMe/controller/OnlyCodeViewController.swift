@@ -8,12 +8,11 @@
 import UIKit
 
 class OnlyCodeViewController: UIViewController {
-    let introProfile: Profile = Profile(intro: "최유성", detailIntro: "iOS 개발자입니다.", image: "person.fill")
-    let sectionHeader: SectionHeader = SectionHeader()
+    let sectionHeader: [String] = SectionHeader().shared
     let myInfo: [Information] = MyInfo().shared
     let myFavorites: [Information] = MyFavorite().shared
     let myOptions: [Information] = MyOption().shared
-    
+    lazy var sectionCount : [Int] = [1, myInfo.count, myFavorites.count, myOptions.count, 1]
     let myTableView: UITableView = UITableView()
 
     override func viewDidLoad() {
@@ -24,11 +23,17 @@ class OnlyCodeViewController: UIViewController {
     private func configure() {
         self.myTableView.dataSource = self
         self.myTableView.delegate = self
-        myTableView.register(OnlyCodeTableViewCell.self, forCellReuseIdentifier: "cell")
+
         setConstraint()
+        setCell()
         
         self.navigationItem.title = "Facebook"
         self.navigationController?.navigationBar.barTintColor = .systemBlue
+    }
+    
+    private func setCell() {
+        myTableView.register(CodeProfileTableViewCell.self, forCellReuseIdentifier: "profileCell")
+        myTableView.register(OnlyCodeTableViewCell.self, forCellReuseIdentifier: "infoCell")
     }
     
     private func setConstraint() {
@@ -45,14 +50,36 @@ class OnlyCodeViewController: UIViewController {
 }
 
 extension OnlyCodeViewController: UITableViewDataSource {
+    // 총 섹션 갯수
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionHeader.count
+    }
+    
+    // 헤더 높이
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    // 헤더 타이틀
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionHeader[section]
+    }
+    
+    // 각 섹션의 셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return sectionCount[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? OnlyCodeTableViewCell else { return UITableViewCell() }
+        if indexPath[0] == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as? CodeProfileTableViewCell else { return UITableViewCell() }
+            return cell
+        } else {
+            guard let cell =  tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as? OnlyCodeTableViewCell else { return UITableViewCell() }
+            print("here")
+            return cell
+        }
         
-        return cell
     }
     
     
