@@ -65,3 +65,7 @@ class CodeProfileTableViewCell: UITableViewCell {
         ])
     }
 }
+
+extension OnlyCodeTableViewCell {
+
+}

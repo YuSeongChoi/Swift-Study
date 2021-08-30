@@ -12,6 +12,21 @@ class ViewController: UIViewController {
     private let smallCellName: String = "small"
     private let bigCellName: String = "big"
     private let cellTitle: [String] = ["pencil.circle","doc.circle","bolt.circle"]
+    
+    // 접근 제어자 더 공부를 하고 다음 시간에 얘기해보자!
+    // [면접문제 단골]
+//    private과 fileprivate의 차이점은?
+//    실제로 구현을 해보지 않았기 때문에 쓴 것과 안쓴것의 차이를 모른다...
+//
+//    open
+//    public
+//    default
+//    fileprivate
+//    private
+//    internal
+    
+    
+    
      
     let data = [
         ["최유성\niOS 개발자 입니다."],

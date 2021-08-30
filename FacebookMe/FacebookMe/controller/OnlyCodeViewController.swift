@@ -8,11 +8,13 @@
 import UIKit
 
 class OnlyCodeViewController: UIViewController {
-    let sectionHeader: [String] = SectionHeader().shared
-    let myInfo: [Information] = MyInfo().shared
-    let myFavorites: [Information] = MyFavorite().shared
-    let myOptions: [Information] = MyOption().shared
-    let myLogout: [Information] = MyLogout().shared
+    private let sectionHeader: [String] = SectionHeader().shared
+    private let myInfo: [Information] = MyInfo().shared
+    private let myFavorites: [Information] = MyFavorite().shared
+    private let myOptions: [Information] = MyOption().shared
+    private let myLogout: [Information] = MyLogout().shared
+    
+    private let imageView = UIImageView()
     
     lazy var sectionCount : [Int] = [1, myInfo.count, myFavorites.count, myOptions.count, myLogout.count]
     lazy var facebookData: [[Information]] = [
@@ -23,7 +25,7 @@ class OnlyCodeViewController: UIViewController {
         myLogout
     ]
     
-    let myTableView: UITableView = UITableView()
+    private let myTableView: UITableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +88,8 @@ extension OnlyCodeViewController: UITableViewDataSource {
             return cell
         } else {
             guard let cell =  tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as? OnlyCodeTableViewCell else { return UITableViewCell() }
+//            cell.configure()
+            // cell의 configure()를 통해 cell안에서 정보를 넣을 수 있다. 즉, 굳이 cell의 변수를 접근할 필요가 없다!
             cell.myLabel.text = facebookData[indexPath.section][indexPath.row].label
             cell.myImageView.image = UIImage(systemName: facebookData[indexPath.section][indexPath.row].image)
             cell.accessoryType = .none
